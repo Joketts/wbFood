@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Seansoned Selections</title>
+
+    <meta name="Foods" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+</head>
+
+    <body>
+
+        <header class = "header">
+
+		    <h1>Seasoned Selections </h1>
+
+            
+            <div class ="side_button">
+                <img src="../images/Side_bar_Icon3.png" onclick="cmd_open()"> 
+            </div> 
+            <div class="mySidebar SideBar_animation" style="display:none;" id="mySidebar">
+                <a onclick="cmd_close()">Exit</a>
+                <div class="display_overlay" onclick="cmd_close()" id="overlay"></div>
+                <a href="SignUp.html" >Sign Up</a>
+                <a href="Login.html"> Login</a>
+                <a href="SignOut.html"> Sign Out</a>
+            </div>
+            
+        </header>
+
+        <nav class = "nav">	
+            <ul>
+                <li><a href="index.html">Home</a></li>
+			    <li><a href="Recipe.html">Recipe</a></li>
+                <li><a href="food_groups.html">Food Groups</a></li>
+                <li><a href="Cooking.html">Cooking</a></li>
+                <li><a href="Community.html">Community</a></li>
+            </ul>
+        </nav>
+        
+        <div class = container>
+            <div class = visable_box>
+                <main>
+
+                    <h3>Home Page</h3>
+
+                    <p>Welcome to our food website, where you'll find a wealth of delicious recipes, food-related articles, and information about cooking and nutrition. Whether you're a seasoned chef or a beginner in the kitchen, our website has something for everyone. <br></br>
+
+                    Our recipes span a wide range of cuisines and dietary needs, from classic comfort foods to vegan and gluten-free options. We believe that good food should be accessible to everyone, regardless of dietary restrictions or preferences.<br></br>
+                
+                    In addition to recipes, we also offer articles and guides on various food-related topics, such as how to cook with specific ingredients, how to meal plan and prep, and how to eat healthy on a budget. We want to help you become a more confident and knowledgeable cook, so you can enjoy delicious and healthy meals at home. <br></br>
+                
+                    So take a look around our website, browse our recipe collection, and get inspired to create something delicious in your own kitchen. We're here to help you on your culinary journey, and we can't wait to see what you'll cook up next!<br><br>
+
+                    Whether you're looking for quick and easy weeknight meals or impressive dishes to wow your dinner guests, our website has a recipe for every occasion.
+
+                    </p>
+                </main>  
+            </div>
+
+            <aside>
+                <div class="image_container">
+                <img class="Images" src="../images/Food9.JPG">
+                </div>
+            </aside>
+        
+        </div>    
+       
+        
+        <footer class="footer">
+            <h4 class="left-align">Contact Information: SeasonedSections@gmail.com</h4>
+            <h4 class="right-align"> Instagram: @Seasoned_Selections</h4>
+        </footer>
+    
+
+        <script>
+            function cmd_open() {
+              document.getElementById("mySidebar").style.display = "block";
+              document.getElementById("overlay").style.display = "block";
+            }
+            
+            function cmd_close() {
+
+                var sidebar = document.getElementById("mySidebar");
+                sidebar.classList.add("SideBar_close_animation"); 
+
+                sidebar.addEventListener("animationend",function() {
+                    sidebar.classList.remove("SideBar_close_animation"); 
+                    document.getElementById("mySidebar").style.display = "none";    
+                    document.getElementById("overlay").style.display = "none";
+                }, {once: true});
+            }
+
+  
+        </script>
+
+    </body>
+</div>
+
+</html>
