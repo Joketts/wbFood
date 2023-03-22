@@ -330,7 +330,7 @@ aside {
 
 
 .image_container:hover img{
-    content: url("../Images/Food10.jpg");
+    content: url("Images/Food10.jpg");
     animation-name: imgfade;
     animation-duration: 1.5s;
 
