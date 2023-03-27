@@ -13,6 +13,13 @@ h3 {
     color: #d8baba;
 }
 
+h5 {
+    font-family:Dancing Script;
+    font-size: 50px;
+    text-align: center;
+    color: #d8baba;
+}
+
 p {
    font-family:Arial;
    line-height: 1.5;
@@ -166,7 +173,7 @@ footer {
     height:100%;
     top:0;
     left:0;
-    right:0x;
+    right:0;
     bottom:0;
     background-color:rgba(0,0,0,0.7);
     z-index:0;
@@ -245,6 +252,7 @@ li a:hover{
 html{
     position:relative;
     min-height: 100%;
+    overflow-x: hidden;
 }
 body {
     margin: 0;
@@ -303,22 +311,80 @@ aside {
 }
 
 /*API output*/
-
+.meals{
+    background-color: #474646;
+    min-height: 50em;
+    padding: 3em;
+}
+.searchbox{
+    padding: 1em;
+    margin: 1em;
+}
 .mealoutputs {
-    padding: 2em;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    background-color: #474646;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
+.mealoption{
+    background-color: #1a1a1a;
+    border: 2px solid black;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px rgb(24, 17, 17);
+    display: flex;
+    margin: 2em;
+    flex-direction: column;
+    height: 500px;
+    max-width: 350px;
+    align-items: center;
+    margin-bottom: 5em;
+}
 
+@media (max-width: 700px) {
+    .mealoutputs{
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    .mealoption{
+        margin-bottom: 7em;
+    }
+}
+
+.mealname {
+    position: absolute;
+    z-index: 1;
+    padding: 4em;
+    margin-top: 17em;
+}
+
+/*.recipe{
+    background-color: #1a1a1a;
+    border: 2px solid black;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px rgb(24, 17, 17);
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    max-width: 325px;
+} */
+
+/*.recipename{
+    position: absolute;
+    z-index: 1;
+    padding: 1em;
+    margin-left: 21em;
+}
 /*images*/
 
 .foodimg{
-    height: 400px;
-    width: auto;
+    height: 500px;
+    width: 350px;
+    border-radius: 25px;
 }
+
+
 .Images {
     border-radius: 25px;
     box-shadow: 5px 5px 50px rgb(24, 17, 17);
@@ -330,7 +396,7 @@ aside {
 
 
 .image_container:hover img{
-    content: url("Images/Food10.jpg");
+    content: url("../Images/Food10.jpg");
     animation-name: imgfade;
     animation-duration: 1.5s;
 
