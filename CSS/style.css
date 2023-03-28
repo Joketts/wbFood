@@ -16,15 +16,20 @@ h3 {
 h5 {
     font-family:Dancing Script;
     font-size: 50px;
-    text-align: center;
     color: #d8baba;
 }
+
 
 p {
    font-family:Arial;
    line-height: 1.5;
+    color: #d8baba;
 }
 
+p1{
+    font-size: 50px;
+    color: #d8baba;
+}
 h4 {
     font-family:Arial;
     font-size: 17px;
@@ -313,18 +318,44 @@ aside {
 /*API output*/
 .meals{
     background-color: #474646;
-    min-height: 50em;
-    padding: 3em;
+    min-height: 0em;
+    padding: 1em;
 }
 .searchbox{
     padding: 1em;
     margin: 1em;
 }
+.input-box{
+    padding: 0.8em;
+    margin: 1em;
+    font-size: 20px;
+    border: 2px solid;
+    color: black;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px rgb(24, 17, 17);
+}
+.search-button{
+    padding: 1em;
+    margin-left: 4em;
+    border: 2px solid;
+    border-radius: 15px;
+    box-shadow: 5px 5px 25px rgb(24, 17, 17);
+}
+@media (max-width: 580px) {
+    .input-box{
+        padding: 0.8em;
+        margin: 1em;
+        font-size: 16px;
+    }
+
+}
+
 .mealoutputs {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     flex-wrap: wrap;
+    min-height: 75em;
 }
 
 .mealoption{
@@ -359,22 +390,58 @@ aside {
     margin-top: 17em;
 }
 
-/*.recipe{
+.recipe{
     background-color: #1a1a1a;
     border: 2px solid black;
     border-radius: 25px;
     box-shadow: 5px 5px 25px rgb(24, 17, 17);
     display: flex;
+    flex-direction: column;
+}
+.top-line{
+    display: flex;
     flex-direction: row;
-    height: 500px;
-    max-width: 325px;
-} */
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+}
+.recipe-name{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
 
-/*.recipename{
-    position: absolute;
-    z-index: 1;
+.close-recipe {
     padding: 1em;
-    margin-left: 21em;
+    font-size: 20px;
+    background-color: #474646;
+    border: 2px solid;
+    color: black;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px rgb(24, 17, 17);
+    height: 100px;
+    width: 250px;
+}
+.recipe-content{
+    padding:15px;
+    margin: 15px;
+}
+
+@media (max-width: 580px) {
+    .meals{
+        min-height: 215em;
+    }
+
+    .close-recipe {
+        padding: 1em;
+        font-size: 17px;
+        height: 75px;
+        width: 200px;
+    }
+}
+
+.display-recipe{
+    display:flex;
 }
 /*images*/
 
