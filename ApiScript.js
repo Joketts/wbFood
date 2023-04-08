@@ -16,7 +16,7 @@ function getMealOutputs() {
 
     const searchInputTxt = document.getElementById('input-box-id').value.trim();
 
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=4c1484d4cb4e49608b18d5676198f507&ingredients=${searchInputTxt}`)
+    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=1250cb8549094af7b2c64c3a4ec56f13&ingredients=${searchInputTxt}`)
     .then(response => response.json())
     .then(data => {
         let html = "";
@@ -49,14 +49,34 @@ function getRecipeOutputs(e){
     e.preventDefault();
     if(e.target.classList.contains('open-recipe')){
         let recipeID = e.target.parentElement.parentElement;
-        fetch(`https://api.spoonacular.com/recipes/${recipeID.dataset.id}/information`)
-            .then(response => response.json())
-            .then(data => RecipeOutputModel(data));
+        fetch(`https://api.spoonacular.com/recipes/${recipeID.dataset.id}/information?apiKey=1250cb8549094af7b2c64c3a4ec56f13`)
+        .then(response => response.json())
+        .then(data => recipeModal(data));
+
     }
 }
-function RecipeOutputModel(){
 
+function recipeModal(data){
+    console.log(data.title);
 
+    console.log(data.title);
 
+    let html = `
+        <div class ="top-line">
+
+            <div class ="recipe-name">
+                <p1> ${data.title} </p1>
+            </div>
+
+            <button class = "close-recipe" type="submit" id="close-recipe-id"> Close Recipe</button>
+        </div>
+
+        <div class ="recipe-content">
+        <p>${data.instructions}</p>
+        </div>
+    `;
+
+recipeOutput.innerHTML = html;
+recipeOutput.parentElement.classList.add('showRecipe')
 
 }
