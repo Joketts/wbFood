@@ -21,6 +21,7 @@ h5 {
 
 
 p {
+    list-style-type: none;
    font-family:Arial;
    line-height: 1.5;
     color: #d8baba;
@@ -201,12 +202,12 @@ footer {
 
 header {background-color:#1a1a1a;}
 footer {background-color: #1a1a1a;}
-ul {background-color: #1a1a1a;}
+nav ul {background-color: #1a1a1a;}
 .container {background-color: #474646;}
 
 /* Nav Bar*/
 
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -215,12 +216,12 @@ ul {
     border-top: 2px solid #ff8c00;
 }
   
-li {
+nav li {
     float: left;
     border-right: 1px solid #ff8c00;
 }
 
-li a {
+nav li a {
     display: block;
     color: #d8baba;
     text-align: center;
@@ -230,24 +231,24 @@ li a {
     
 }
 
-li:hover {
+nav li:hover {
     transition: all 0.3s;
     background-color:#ff8c00;
    
 }
 
-li a:hover{
+nav li a:hover{
     color: black;
 }
 
 @media (max-width: 1500px) {
-   ul a{
+   nav ul a{
     padding: 1em 1.4em;
   }
 }
 
 @media (max-width: 600px) {
-    ul a{
+    nav ul a{
       padding: 0.5em 0.95em;
     }
 }
@@ -318,8 +319,8 @@ aside {
 /*API output*/
 .meals{
     background-color: #474646;
-    min-height: 0em;
     padding: 1em;
+    min-height: 75vh;
 }
 .searchbox{
     padding: 1em;
@@ -355,7 +356,6 @@ aside {
     flex-direction: row;
     align-items: flex-start;
     flex-wrap: wrap;
-    min-height: 75vh;
 }
 
 .mealOption{
@@ -396,24 +396,40 @@ aside {
 }
 
 .recipe{
+    color: #d8baba;
+    position: fixed;
+    top:38%;
+    left: 22%;
+    align-self: center;
     background-color: #1a1a1a;
-    border: 2px solid black;
+    border: 2px solid #ff8c00;
     border-radius: 25px;
-    box-shadow: 5px 5px 25px rgb(24, 17, 17);
-    display: flex;
+    box-shadow: 5px 5px 25px #ff8c00;
+    display: none;
     flex-direction: column;
+    padding: 1em;
+    margin-bottom: 5em;
+    width: 60%;
+    overflow-y: scroll;
+}
+
+.recipe::-webkit-scrollbar{
+    width: 10px;
+}
+
+.recipe::-webkit-scrollbar-thumb{
+    background: #ff8c00;
+    border-radius: 25px;
 }
 .top-line{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 10px;
-    padding: 10px;
+
 }
 .recipe-name{
     text-align: center;
-    padding: 10px;
-    margin: 10px;
+
 }
 
 .close-recipe {
@@ -428,11 +444,17 @@ aside {
     width: 250px;
 }
 .recipe-content{
-    padding:15px;
-    margin: 15px;
+
+}
+
+@media (max-width: 1000px){
+    .recipe{
+        top:10%;
+    }
 }
 
 @media (max-width: 580px) {
+
     .meals{
         min-height: 215em;
     }
@@ -445,9 +467,6 @@ aside {
     }
 }
 
-.showRecipe{
-    display:flex;
-}
 /*images*/
 
 .foodimg{

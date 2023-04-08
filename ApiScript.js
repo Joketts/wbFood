@@ -2,21 +2,23 @@
 
 const searchInput = document.getElementById('search-button-id');
 const meals = document.getElementById('mealOutputs-id');
-const recipeOutput = document.querySelector('.recipe');
+const recipeShow = document.querySelector('.recipe');
+const recipeOutput = document.querySelector('.recipe-content');
 const recipeClose = document.getElementById('close-recipe-id');
 
 searchInput.addEventListener('click' , getMealOutputs)
+searchInput.addEventListener('click' , closeRecipe)
 meals.addEventListener('click' , getRecipeOutputs)
 recipeClose.addEventListener('click', closeRecipe)
 function closeRecipe() {
-    recipeOutput.parentElement.classList.remove('showRecipe');
+    recipeShow.style.display = 'none';
 }
 
 function getMealOutputs() {
 
     const searchInputTxt = document.getElementById('input-box-id').value.trim();
 
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=1250cb8549094af7b2c64c3a4ec56f13&ingredients=${searchInputTxt}`)
+    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=4c1484d4cb4e49608b18d5676198f507&ingredients=${searchInputTxt}`)
     .then(response => response.json())
     .then(data => {
         let html = "";
@@ -49,15 +51,15 @@ function getRecipeOutputs(e){
     e.preventDefault();
     if(e.target.classList.contains('open-recipe')){
         let recipeID = e.target.parentElement.parentElement;
-        fetch(`https://api.spoonacular.com/recipes/${recipeID.dataset.id}/information?apiKey=1250cb8549094af7b2c64c3a4ec56f13`)
+        fetch(`https://api.spoonacular.com/recipes/${recipeID.dataset.id}/information?apiKey=4c1484d4cb4e49608b18d5676198f507`)
         .then(response => response.json())
-        .then(data => recipeModal(data));
+        .then(data => recipeModal(data))
+
 
     }
 }
 
 function recipeModal(data){
-    console.log(data.title);
 
     console.log(data.title);
 
@@ -65,18 +67,23 @@ function recipeModal(data){
         <div class ="top-line">
 
             <div class ="recipe-name">
-                <p1> ${data.title} </p1>
+                <h5> ${data.title} </h5>
             </div>
-
-            <button class = "close-recipe" type="submit" id="close-recipe-id"> Close Recipe</button>
         </div>
 
         <div class ="recipe-content">
+        <p>Serves:${data.servings}</p>
+        <p>Only ${data.readyInMinutes} minutes to make</p>
+        <br>
         <p>${data.instructions}</p>
+        <br>
+        <div class = "recipe-link"></div>
+        <a href = "${data.sourceUrl}"> Source of Recipe</a>
         </div>
     `;
 
 recipeOutput.innerHTML = html;
-recipeOutput.parentElement.classList.add('showRecipe')
+recipeShow.style.display = 'flex';
+
 
 }
