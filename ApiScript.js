@@ -1,7 +1,7 @@
 
 
 const searchInput = document.getElementById('search-button-id');
-const meals = document.getElementById('mealOption');
+const meals = document.getElementById('mealOutputs-id');
 const recipeOutput = document.querySelector('.recipe');
 const recipeClose = document.getElementById('close-recipe-id');
 
@@ -16,38 +16,45 @@ function getMealOutputs() {
 
     const searchInputTxt = document.getElementById('input-box-id').value.trim();
 
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=1250cb8549094af7b2c64c3a4ec56f13&ingredients=apples`)
+    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=4c1484d4cb4e49608b18d5676198f507&ingredients=${searchInputTxt}`)
     .then(response => response.json())
     .then(data => {
-        console.log(data)
-    })
+        let html = "";
+        if (data) {
+            data.forEach(recipe => {
+                html += `
+                    <main class = "mealOption" >
+                      <div class = "mealOption-item" data-id="${recipe.id}">
+                      
+                            <div class ="mealImg">
+                                <img class ="foodimg open-recipe" src="${recipe.image}">
+                            </div>
+        
+                            <div class ="mealname">
+                                <h5> ${recipe.title} </h5>
+                            </div>
+                       </div>
+                    </main> 
+                `;
+            });
+            meals.innerHTML = html;
+        } else {
+            meals.innerHTML ="<p>No results found.</p>"
+        }
+
+    });
+
 }
-            //let html ="";
-
-
-            //if(data.id) {
-                //data.id.forEach(id => {
-                    //html += `
-                            //<div class = "mealOption-item" data-id="${meal.id}">
-
-                                //<div class ="mealImg">
-                                    //<img class ="foodimg" src="${meal.image}>
-                                //</div>
-
-                                //<div class ="mealname">
-                                    //<h5> ${meal.title} </h5>
-                                //</div>
-                            //</div>
-                            //`;
-                //})
-               // meals.innerHTML = html;
-            //}
-        //})
-
-
-
-
-function getRecipeOutputs(){
+function getRecipeOutputs(e){
+    e.preventDefault();
+    if(e.target.classList.contains('open-recipe')){
+        let recipeID = e.target.parentElement.parentElement;
+        fetch(`https://api.spoonacular.com/recipes/${recipeID.dataset.id}/information`)
+            .then(response => response.json())
+            .then(data => RecipeOutputModel(data));
+    }
+}
+function RecipeOutputModel(){
 
 
 
