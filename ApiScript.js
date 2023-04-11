@@ -78,7 +78,7 @@ function recipeModal(data){
         <p>${data.instructions}</p>
         <br>
         <div class = "recipe-link"></div>
-        <a href = "${data.sourceUrl}"> Source of Recipe</a>
+        <p>Source of recipe: <a href = "${data.sourceUrl}"> Click Here</a></p>
         </div>
     `;
 

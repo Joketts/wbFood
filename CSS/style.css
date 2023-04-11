@@ -21,6 +21,7 @@ h5 {
 
 
 p {
+    text-decoration: none;
     list-style-type: none;
    font-family:Arial;
    line-height: 1.5;
@@ -30,6 +31,12 @@ p {
 p1{
     font-size: 50px;
     color: #d8baba;
+    font-family:Arial;
+}
+p3{
+    font-size: 25px;
+    color: #d8baba;
+    font-family:Arial;
 }
 h4 {
     font-family:Arial;
@@ -366,8 +373,8 @@ aside {
     display: flex;
     margin: 1em;
     flex-direction: column;
-    height: 550px;
-    max-width: 500px;
+    height: 30em;
+    max-width: 27em;
     align-items: center;
     margin-bottom: 5em;
     padding: 1em;
@@ -443,7 +450,8 @@ aside {
     height: 100px;
     width: 250px;
 }
-.recipe-content{
+.recipe-link a{
+    color: #d8baba;
 
 }
 
@@ -470,8 +478,8 @@ aside {
 /*images*/
 
 .foodimg{
-    height: 400px;
-    width: 500px;
+    height: 350px;
+    width: 450px;
     border-radius: 25px;
 }
 
@@ -482,6 +490,14 @@ aside {
     }
 }
 
+.Images_2 {
+    border-radius: 25px;
+    box-shadow: 5px 5px 50px rgb(24, 17, 17);
+    Width:70%;
+    Height:auto;
+    animation-name: ogfade;
+    animation-duration: 0.5s;
+}
 .Images {
     border-radius: 25px;
     box-shadow: 5px 5px 50px rgb(24, 17, 17);
@@ -490,7 +506,14 @@ aside {
     animation-name: ogfade;
     animation-duration: 0.5s;
 }
-
+.Images_other{
+    border-radius: 25px;
+    box-shadow: 5px 5px 50px rgb(24, 17, 17);
+    Width:50%;
+    Height:auto;
+    animation-name: ogfade;
+    animation-duration: 0.5s;
+}
 
 .image_container:hover img{
     content: url("../Images/Food10.jpg");
@@ -508,4 +531,4 @@ aside {
     from {opacity: .5}
     to {opacity: 1}
 }
-  
+
