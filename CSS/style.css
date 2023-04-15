@@ -136,10 +136,7 @@ footer {
 .mySidebar a:first-child {
     font-size: 35px;
 }
-.mySidebar a:last-child {
-    border-top: 2px solid #ff8c00;
-    position: fixed;
-    bottom: 0;
+
 }
 .mySidebar a:hover{
     background-color: #474646;
