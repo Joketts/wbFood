@@ -447,6 +447,18 @@ aside {
     height: 100px;
     width: 250px;
 }
+
+.save-recipe {
+    padding: 1em;
+    font-size: 20px;
+    background-color: #474646;
+    border: 2px solid;
+    color: black;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px rgb(24, 17, 17);
+    height: 100px;
+    width: 250px;
+}
 .recipe-link a{
     color: #d8baba;
 

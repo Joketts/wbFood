@@ -9,6 +9,7 @@ const recipeClose = document.getElementById('close-recipe-id');
 searchInput.addEventListener('click' , getMealOutputs)
 searchInput.addEventListener('click' , closeRecipe)
 meals.addEventListener('click' , getRecipeOutputs)
+meals.addEventListener('click' , getSave)
 recipeClose.addEventListener('click', closeRecipe)
 function closeRecipe() {
     recipeShow.style.display = 'none';
@@ -47,18 +48,28 @@ function getMealOutputs() {
     });
 
 }
-function getRecipeOutputs(e){
+function getRecipeOutputs(e) {
     e.preventDefault();
-    if(e.target.classList.contains('open-recipe')){
+    if (e.target.classList.contains('open-recipe')) {
         let recipeID = e.target.parentElement.parentElement;
         fetch(`https://api.spoonacular.com/recipes/${recipeID.dataset.id}/information?apiKey=4c1484d4cb4e49608b18d5676198f507`)
-        .then(response => response.json())
-        .then(data => recipeModal(data))
+            .then(response => response.json())
+            .then(data => recipeModal(data))
 
 
     }
 }
 
+function getSave(e) {
+    e.preventDefault();
+    if (e.target.classList.contains('save-recipe')) {
+        let recipeID = e.target.parentElement.parentElement;
+        fetch(`https://api.spoonacular.com/recipes/${recipeID.dataset.id}/information?apiKey=4c1484d4cb4e49608b18d5676198f507`)
+            .then(save => save())
+            console.log(data)
+
+    }
+}
 function recipeModal(data){
 
     console.log(data.title);
