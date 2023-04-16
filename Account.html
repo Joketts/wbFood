@@ -22,12 +22,12 @@
 
     <header class = "header">
 
-      <h1>Seasoned Selections </h1>
+      <h10>Seasoned Selections </h10>
 
     </header>
 
 
-    <nav>
+    <nav1>
         <div class="">
             <ul id="nav-mobile" class ="">
                 <li><a href="index.html">Home</a></li>
@@ -45,7 +45,7 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav1>
 
 
 
@@ -69,7 +69,7 @@
 
     <div id="modal-login" class="modal">
       <div class="modal-content">
-        <h4>Login</h4>
+        <h3>Login</h3>
         <form id="login-form">
             <div class="input-field">
                 <input type="email" id="login-email" required />
@@ -87,17 +87,32 @@
 
     <div id="modal-account" class="modal">
       <div class="modal-content center-align">
-        <h4>Account details</h4>
+        <h3>Account details</h3>
         <div class="account-details"></div>
       </div>
     </div>
 
+    <div class= "container">
 
+        <aside>
+            <div class="image_container">
+                <img class="Images" src="Images/Food12.jpg">
+            </div>
+        </aside>
+
+        <aside>
+            <div class="image_container">
+                <img class="Images" src="Images/Food8.jpg">
+            </div>
+        </aside>
+
+
+    </div>
 
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-        import{ getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js';
+        import{ getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js';
 
 
         // Your web app's Firebase configuration
@@ -116,6 +131,10 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
 
+        onAuthStateChanged(auth, user =>{
+            console.log(user)
+
+        })
         const signupForm = document.querySelector('#signup-form')
         signupForm.addEventListener('submit', (e) =>{
             e.preventDefault();

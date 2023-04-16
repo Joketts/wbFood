@@ -1,4 +1,4 @@
-h1 {
+h10 {
     font-family:Dancing Script;
     font-size: 60px;
     color: #d8baba;
@@ -6,9 +6,9 @@ h1 {
 
 h3 {
     font-family:Dancing Script;
-    font-size: 40px;
+    font-size: 50px;
     text-align: center;
-    color: #d8baba;
+    color:#1a1a1a;
 }
 
 h5 {
@@ -98,12 +98,12 @@ footer {
 
 header {background-color:#1a1a1a;}
 footer {background-color: #1a1a1a;}
-nav ul {background-color: #1a1a1a;}
+nav1 ul {background-color: #1a1a1a;}
 body {background-color: #474646;}
 
 /* Nav Bar*/
 
-nav ul {
+nav1 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -112,13 +112,14 @@ nav ul {
     border-top: 2px solid #ff8c00;
 }
 
-nav li {
+nav1 li {
     float: left;
     border-right: 1px solid #ff8c00;
 }
 
-nav li a {
+nav1 li a {
     display: block;
+    font-size: 17px;
     color: #d8baba;
     text-align: center;
     padding: 2em 2.7em;
@@ -127,24 +128,24 @@ nav li a {
 
 }
 
-nav li:hover {
+nav1 li:hover {
     transition: all 0.3s;
     background-color:#ff8c00;
 
 }
 
-nav li a:hover{
+nav1 li a:hover{
     color: black;
 }
 
 @media (max-width: 1500px) {
-    nav ul a{
+    nav1 ul a{
         padding: 1em 1.4em;
     }
 }
 
 @media (max-width: 600px) {
-    nav ul a{
+    nav1 ul a{
         padding: 0.5em 0.95em;
     }
 }
@@ -161,4 +162,28 @@ body {
     padding:0;
     min-height: 100%
 
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+aside {
+    flex: 1;
+    padding: 2em;
+    min-width: 50%;
+}
+
+
+
+.Images {
+    border-radius: 25px;
+    box-shadow: 5px 5px 50px rgb(24, 17, 17);
+    Width:70%;
+    Height:auto;
+    animation-name: ogfade;
+    animation-duration: 0.5s;
 }
