@@ -137,7 +137,7 @@ footer {
     font-size: 35px;
 }
 
-}
+
 .mySidebar a:hover{
     background-color: #474646;
 }
@@ -448,17 +448,6 @@ aside {
     width: 250px;
 }
 
-.save-recipe {
-    padding: 1em;
-    font-size: 20px;
-    background-color: #474646;
-    border: 2px solid;
-    color: black;
-    border-radius: 25px;
-    box-shadow: 5px 5px 25px rgb(24, 17, 17);
-    height: 100px;
-    width: 250px;
-}
 .recipe-link a{
     color: #d8baba;
 
@@ -499,14 +488,7 @@ aside {
     }
 }
 
-.Images_2 {
-    border-radius: 25px;
-    box-shadow: 5px 5px 50px rgb(24, 17, 17);
-    Width:70%;
-    Height:auto;
-    animation-name: ogfade;
-    animation-duration: 0.5s;
-}
+
 .Images {
     border-radius: 25px;
     box-shadow: 5px 5px 50px rgb(24, 17, 17);
@@ -531,6 +513,37 @@ aside {
 
 }
 
+.Images_2 {
+    border-radius: 25px;
+    box-shadow: 5px 5px 50px rgb(24, 17, 17);
+    Width:70%;
+    Height:auto;
+    animation-name: ogfade;
+    animation-duration: 0.5s;
+}
+
+.Images_2:hover{
+    content: url("../Images/Food12.jpg");
+    animation-name: imgfade;
+    animation-duration: 1.5s;
+
+}
+
+.Images_3 {
+    border-radius: 25px;
+    box-shadow: 5px 5px 50px rgb(24, 17, 17);
+    Width:70%;
+    Height:auto;
+    animation-name: ogfade;
+    animation-duration: 0.5s;
+}
+
+.Images_3:hover{
+    content: url("../Images/Yellow1.jpg");
+    animation-name: imgfade;
+    animation-duration: 1.5s;
+
+}
 @keyframes imgfade {
     from {opacity: .5}
     to {opacity: 1}
