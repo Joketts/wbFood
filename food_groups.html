@@ -7,7 +7,7 @@
     <meta name="Foods" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
-
+    <!--gets style sheet from google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
 </head>
@@ -18,10 +18,12 @@
 
             <h1>Seasoned Selections </h1>
 
+            <!--button to open sidebar-->
             <div class ="side_button">
                 <img src="Images/Side_bar_Icon3.png" onclick="cmd_open()">
             </div>
 
+            <!--side bar only shown using js-->
             <div class="mySidebar SideBar_animation" style="display:none;" id="mySidebar">
                 <a onclick="cmd_close()">Exit</a>
                 <div class="display_overlay" onclick="cmd_close()" id="overlay"></div>
@@ -39,7 +41,8 @@
                 <li><a href="Cooking.html">Cooking</a></li>
             </ul>
         </nav>
-        
+
+        <!--flex container-->
         <div class = container>
             <div class = visable_box>
                 <main>
@@ -66,27 +69,31 @@
             <h4 class="left-align">Contact Information: SeasonedSections@gmail.com</h4>
             <h4 class="right-align"> Instagram: @Seasoned_Selections</h4>
         </footer>
-    
 
+
+        <!-- function to open and close sidebar & to display shaded overlay-->
         <script>
             function cmd_open() {
-              document.getElementById("mySidebar").style.display = "block";
-              document.getElementById("overlay").style.display = "block";
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("overlay").style.display = "block";
             }
-            
+
             function cmd_close() {
 
-            var sidebar = document.getElementById("mySidebar");
-            sidebar.classList.add("SideBar_close_animation"); 
+                //gets sidebar element
+                var sidebar = document.getElementById("mySidebar");
+                //runs the closing animation class
+                sidebar.classList.add("SideBar_close_animation");
 
-            sidebar.addEventListener("animationend",function() {
-                sidebar.classList.remove("SideBar_close_animation"); 
-                document.getElementById("mySidebar").style.display = "none";    
-                document.getElementById("overlay").style.display = "none";
-            }, {once: true});
-            }   
+                //event listener waiting for animation to be completed
+                sidebar.addEventListener("animationend",function() {
+                    //removes the animation so function can be repeated
+                    sidebar.classList.remove("SideBar_close_animation");
+                    document.getElementById("mySidebar").style.display = "none";
+                    document.getElementById("overlay").style.display = "none";
+                }, {once: true});
+            }
 
-  
         </script>
 
     </body>

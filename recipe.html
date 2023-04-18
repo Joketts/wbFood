@@ -8,8 +8,10 @@
 
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
 
+    <!--gets style sheet with search button style from Google icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+    <!--gets style sheet from google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
 </head>
@@ -20,10 +22,12 @@
 
             <h1>Seasoned Selections </h1>
 
+            <!--button to open sidebar-->
             <div class ="side_button">
                 <img src="Images/Side_bar_Icon3.png" onclick="cmd_open()">
             </div>
 
+            <!--side bar only shown using js-->
             <div class="mySidebar SideBar_animation" style="display:none;" id="mySidebar">
                 <a onclick="cmd_close()">Exit</a>
                 <div class="display_overlay" onclick="cmd_close()" id="overlay"></div>
@@ -43,7 +47,7 @@
             </ul>
         </nav>
 
-
+        <!--flex container-->
         <div class ="meals">
 
             <div class ="searchbox">
@@ -55,8 +59,8 @@
                 </button>
             </div>
 
+            <!-- Outputs created in ApiScript.js -->
             <div class = "mealoutputs" id="mealOutputs-id">
-
 
                 <!--<main class = "mealOption" >
 
@@ -74,10 +78,10 @@
                 </main>-->
             </div>
 
+            <!-- Outputs created in ApiSciprt.js -->
             <div class ="recipe">
 
                 <button class = "close-recipe" type="submit" id="close-recipe-id"> Close Recipe</button>
-
 
                 <div class ="recipe-content">
                     <!--<div class ="top-line">
@@ -85,7 +89,6 @@
                         <div class ="recipe-name">
                             <p1> Recipe Name </p1>
                         </div>-->
-
 
                        <!-- <div class ="recipe-content">
                             <p>In a small bowl, mix together the soy sauce, oyster sauce, chili paste, and cornstarch.
@@ -109,26 +112,30 @@
         </footer>
 
         <script src = "ApiScript.js"></script>
-    
+
+        <!-- function to open and close sidebar & to display shaded overlay-->
         <script>
             function cmd_open() {
-              document.getElementById("mySidebar").style.display = "block";
-              document.getElementById("overlay").style.display = "block";
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("overlay").style.display = "block";
             }
-            
+
             function cmd_close() {
 
-            var sidebar = document.getElementById("mySidebar");
-            sidebar.classList.add("SideBar_close_animation"); 
+                //gets sidebar element
+                var sidebar = document.getElementById("mySidebar");
+                //runs the closing animation class
+                sidebar.classList.add("SideBar_close_animation");
 
-            sidebar.addEventListener("animationend",function() {
-                sidebar.classList.remove("SideBar_close_animation"); 
-                document.getElementById("mySidebar").style.display = "none";    
-                document.getElementById("overlay").style.display = "none";
-            }, {once: true});
+                //event listener waiting for animation to be completed
+                sidebar.addEventListener("animationend",function() {
+                    //removes the animation so function can be repeated
+                    sidebar.classList.remove("SideBar_close_animation");
+                    document.getElementById("mySidebar").style.display = "none";
+                    document.getElementById("overlay").style.display = "none";
+                }, {once: true});
             }
 
-  
         </script>
 
     </body>

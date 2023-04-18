@@ -8,7 +8,7 @@
         <meta name="Foods" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" type="text/css" href="CSS/style.css">
-
+        <!--gets style sheet from google fonts-->
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
     </head>
@@ -20,15 +20,16 @@
 
             <h1>Seasoned Selections </h1>
 
+            <!--button to open sidebar-->
             <div class ="side_button">
                 <img src="Images/Side_bar_Icon3.png" onclick="cmd_open()">
             </div>
 
+            <!--side bar only shown using js-->
             <div class="mySidebar SideBar_animation" style="display:none;" id="mySidebar">
                 <a onclick="cmd_close()">Exit</a>
                 <div class="display_overlay" onclick="cmd_close()" id="overlay"></div>
                 <a href="Account.html" >Account</a>
-
             </div>
 
         </header>
@@ -43,6 +44,7 @@
                 </ul>
         </nav>
 
+        <!--flex container-->
         <div class = container>
             <div class = visable_box>
                 <main>
@@ -74,14 +76,14 @@
 
         </div>
 
+        <!--Script used on account.html copied to show user is logged on, on the main page (only shows in console)-->
         <script type="module">
 
+            //imports the required functions from firebase
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
             import{ getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js';
 
-
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            //firebase config for my account
             const firebaseConfig = {
                 apiKey: "AIzaSyB7ZR3yQF8SzBv5jWp47FgO6TweEH7hUh4",
                 authDomain: "mywebsitedatabase-2ff3e.firebaseapp.com",
@@ -96,35 +98,42 @@
             const app = initializeApp(firebaseConfig);
             const auth = getAuth(app);
 
+            //When page is loaded
             onAuthStateChanged(auth, user =>{
+                //if a user is logged in display user in console
                 if(user) {
                     console.log('user logged in: ', user)
                 } else {
+                    //display no user in console
                     console.log('user logged out')
                 }
             })
         </script>
 
-            <script>
-                function cmd_open() {
-                  document.getElementById("mySidebar").style.display = "block";
-                  document.getElementById("overlay").style.display = "block";
-                }
+        <!-- function to open and close sidebar & to display shaded overlay-->
+        <script>
+        function cmd_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
 
-                function cmd_close() {
+        function cmd_close() {
 
-                    var sidebar = document.getElementById("mySidebar");
-                    sidebar.classList.add("SideBar_close_animation");
+            //gets sidebar element
+            var sidebar = document.getElementById("mySidebar");
+            //runs the closing animation class
+            sidebar.classList.add("SideBar_close_animation");
 
-                    sidebar.addEventListener("animationend",function() {
-                        sidebar.classList.remove("SideBar_close_animation");
-                        document.getElementById("mySidebar").style.display = "none";
-                        document.getElementById("overlay").style.display = "none";
-                    }, {once: true});
-                }
+            //event listener waiting for animation to be completed
+            sidebar.addEventListener("animationend",function() {
+                //removes the animation so function can be repeated
+                sidebar.classList.remove("SideBar_close_animation");
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("overlay").style.display = "none";
+        }, {once: true});
+        }
 
-
-            </script>
+        </script>
     </body>
 
 </html>
