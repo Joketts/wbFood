@@ -1,5 +1,5 @@
 
-//Code for getting data and creating html modals, as I had never used an Api before I used https://github.com/prabinmagar/meal-search-api-vanilla-js design for help
+//Code for getting data and creating html modals, as I had never used an Api before I used https://www.youtube.com/watch?v=opikz5x_1ak&t=1426s&ab_channel=GeekProbin design for help
 //The code I took inspiration from was using a different API, and no code was copied more on this in the report
 
 
